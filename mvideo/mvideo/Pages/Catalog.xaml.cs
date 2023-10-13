@@ -29,7 +29,7 @@ namespace mvideo.Pages
 
             foreach (var prods in prod )
             {
-                catalWP.Children.Add(new UserControl1(new Image(), prods.Title.ToString(), Oct(prods.Id).Item1, Oct(prods.Id).Item2 ,(double)prods.Cost));
+                catalWP.Children.Add(new UserControl1(new Image(), prods.Title.ToString(), Oct(prods.Id).Item1, Oct(prods.Id).Item2 ,(double)prods.Cost, prods.CostVisibilitr));
             }
         }
 

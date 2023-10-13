@@ -18,7 +18,11 @@
         <Image Margin="10" x:Name="photo" Grid.Row="0" Source="/Resours/Image_logo/m_video.png"></Image>
         <TextBlock x:Name="NameTB" Grid.Row="1"></TextBlock>
         <TextBlock x:Name="othovTb" Grid.Row="2"></TextBlock>
-        <TextBlock x:Name="chenaTB" Grid.Row="3"></TextBlock>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="chenaSkidTB" TextDecorations="Strikethrough" Visibility="{Binding chenaSkidTB}" Grid.Row="3"></TextBlock>
+                <TextBlock x:Name="chenaTB" Grid.Row="3"></TextBlock>
+            </StackPanel>
+        
         <StackPanel Grid.Row="4" Orientation="Horizontal">
             <Button Background="Red" BorderBrush="Black" Width="100" x:Name="kupBtn">🗑</Button>
             <Button Background="White" Foreground="#FF7A7A7A" BorderBrush="White" x:Name="serBtn"  >❤</Button>

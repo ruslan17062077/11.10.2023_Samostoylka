@@ -3,10 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
-namespace mvideo.Components.PartiyClass
+namespace mvideo.Components
 {
-    internal class Product
+    internal partial class Product
     {
+        public Visibility CostVisibilitr
+        {
+            get
+            {
+                if (Discount == 0)
+                    return Visibility.Collapsed;
+                else
+                    return Visibility.Visible;
+            }
+        }
     }
 }

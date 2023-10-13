@@ -20,7 +20,7 @@ namespace mvideo.Components
     /// </summary>
     public partial class UserControl1 : UserControl
     {
-        public UserControl1(Image _photo, string _name, double _otc, int count, double _chena )
+        public UserControl1(Image _photo, string _name, double _otc, int count, double _chena, Visibility visibility )
         {           
             InitializeComponent();
             if (_otc == 0 | _otc == 1 )
@@ -28,15 +28,19 @@ namespace mvideo.Components
                 photo = _photo;
                 NameTB.Text = _name;
                 othovTb.Visibility = Visibility.Hidden;
+                chenaSkidTB.Text = _chena.ToString();
                 chenaTB.Text = $"{_chena:f2}";
+                chenaSkidTB.Visibility = visibility;
             }
             else
             {
                 photo = _photo;
                 NameTB.Text = _name;
                 othovTb.Text = $"⭐{_otc.ToString():f2}  {count} отзыв";
-                chenaTB.Text = $"{_chena:f2}   {(_chena / _otc):f2}";
-                
+                chenaSkidTB.Text = _chena.ToString();
+                chenaTB.Text = $" {(_chena / _otc):f2}";
+                chenaSkidTB.Visibility = visibility;
+
             }
 
 
