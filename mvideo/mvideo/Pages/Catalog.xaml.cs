@@ -29,15 +29,15 @@ namespace mvideo.Pages
 
             foreach (var prods in prod )
             {
-                catalWP.Children.Add(new UserControl1(new Image(), prods.Title.ToString(), Oct(prods.Id), prods.Cost));
+                catalWP.Children.Add(new UserControl1(new Image(), prods.Title.ToString(), Oct(prods.Id).Item1, Oct(prods.Id).Item2 ,(double)prods.Cost));
             }
         }
 
-        private static decimal Oct(int id)
+        private static (double ,int ) Oct(int id)
         {
             try
                 {
-                int itog = 0;
+                double itog = 0;
                 int count = 0;
 
                 var otchov = App.db.Feedback.ToList();
@@ -53,10 +53,10 @@ namespace mvideo.Pages
 
                 }
 
-                return (itog / count);
+                return ((itog / count), count);
             }
             catch {
-                return 0;
+                return (0 , 0);
             }
         }
 

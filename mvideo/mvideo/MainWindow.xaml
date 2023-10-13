@@ -18,5 +18,6 @@
         <TextBlock HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1" >M_video</TextBlock>
         <Image Source="/Resours/Image_logo/m_video.png" ></Image>
         <Frame x:Name="frams" Grid.Column="1" Grid.Row="1"></Frame>
+        
     </Grid>
 </Window>

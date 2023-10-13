@@ -1,4 +1,11 @@
 {
-  "ExpandedNodes": [],
+  "ExpandedNodes": [
+    "",
+    "\\mvideo",
+    "\\mvideo\\mvideo",
+    "\\mvideo\\mvideo\\Components",
+    "\\mvideo\\mvideo\\Pages"
+  ],
+  "SelectedNode": "\\mvideo\\mvideo\\Pages\\Catalog.xaml.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -20,22 +20,23 @@ namespace mvideo.Components
     /// </summary>
     public partial class UserControl1 : UserControl
     {
-        public UserControl1(Image _photo, string _name, decimal _otc, decimal _chena )
-        {
+        public UserControl1(Image _photo, string _name, double _otc, int count, double _chena )
+        {           
             InitializeComponent();
-            if (_otc == 0 || _otc == 1)
+            if (_otc == 0 | _otc == 1 )
             {
                 photo = _photo;
                 NameTB.Text = _name;
                 othovTb.Visibility = Visibility.Hidden;
-                chenaTB.Text = $"{_chena}";
+                chenaTB.Text = $"{_chena:f2}";
             }
             else
             {
                 photo = _photo;
                 NameTB.Text = _name;
-                othovTb.Text = _otc.ToString();
-                chenaTB.Text = $"{_chena}   {(_chena / _otc):0}";
+                othovTb.Text = $"⭐{_otc.ToString():f2}  {count} отзыв";
+                chenaTB.Text = $"{_chena:f2}   {(_chena / _otc):f2}";
+                
             }
 
 
