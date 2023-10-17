@@ -29,36 +29,21 @@ namespace mvideo.Pages
 
             foreach (var prods in prod )
             {
-                catalWP.Children.Add(new UserControl1(new Image(), prods.Title.ToString(), Oct(prods.Id).Item1, Oct(prods.Id).Item2 ,(double)prods.Cost, prods.CostVisibilitr));
+                catalWP.Children.Add(new UserControl1(new Image(), prods.Title.ToString(), prods.AverageRating, prods.CountFeedback.Item1 ,(double)prods.Cost, (double)prods.Discount, prods.CostVisibilitr, prods.CountFeedback.Item2));
+            }
+            if(App.admins == false) { 
+                addProd.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                addProd.Visibility= Visibility.Visible;
             }
         }
 
-        private static (double ,int ) Oct(int id)
+        private void addProd_Click(object sender, RoutedEventArgs e)
         {
-            try
-                {
-                double itog = 0;
-                int count = 0;
-
-                var otchov = App.db.Feedback.ToList();
-                foreach (var ocns in otchov)
-                {
-                    if (ocns.ProductId == id)
-                    {
-                        itog = ocns.Evaluation;
-                        count++;
-
-                    }
-
-
-                }
-
-                return ((itog / count), count);
-            }
-            catch {
-                return (0 , 0);
-            }
+            AddProds taskWindow = new AddProds();
+            taskWindow.Show();
         }
-
     }
 }

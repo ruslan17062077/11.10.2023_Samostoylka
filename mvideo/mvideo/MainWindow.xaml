@@ -17,7 +17,23 @@
         </Grid.RowDefinitions>
         <TextBlock HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1" >M_video</TextBlock>
         <Image Source="/Resours/Image_logo/m_video.png" ></Image>
-        <Frame x:Name="frams" Grid.Column="1" Grid.Row="1"></Frame>
+        <Frame x:Name="frams" Grid.Column="1" Grid.Row="1"  NavigationUIVisibility="Hidden" ></Frame>
+        <StackPanel Grid.Column="0" Grid.Row="1" VerticalAlignment="Bottom">
+          <Button x:Name="vhodadmin" Background="Blue" Click="vhodadmin_Click">
+            <TextBlock>
+                вход <LineBreak/> адимн
+        
+            </TextBlock> </Button>
+            <PasswordBox x:Name="passwordadm"></PasswordBox>
+            <Button x:Name="endadmin" Background="Blue" Click="endadmin_Click" >
+                <TextBlock>
+                выход<LineBreak/> адимн
+                </TextBlock>
+            </Button>
+            <Button x:Name="close" Background="Blue" Click="close_Click" >Выход</Button>
+        </StackPanel>
+        
+        
         
     </Grid>
 </Window>

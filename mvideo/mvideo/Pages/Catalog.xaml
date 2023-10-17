@@ -17,6 +17,7 @@
         <ScrollViewer HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Center" Grid.Row="1">
             <WrapPanel x:Name="catalWP" Grid.Row="1"> </WrapPanel>
         </ScrollViewer>
+        <Button Grid.Row="2 " x:Name="addProd" Click="addProd_Click" >Добавить</Button>
 
 
     </Grid>
