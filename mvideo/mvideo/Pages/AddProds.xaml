@@ -22,11 +22,11 @@
         <TextBlock Grid.Row="1" >Имя</TextBlock>
         <TextBlock Grid.Row="2">Цена</TextBlock>
         <TextBlock Grid.Row="3">Скидка</TextBlock>
-        <TextBox Grid.Row="1" Grid.Column="1" ></TextBox>
-        <TextBox Grid.Row="2" Grid.Column="1" ></TextBox>
-        <TextBox Grid.Row="3" Grid.Column="1" ></TextBox>
+        <TextBox Grid.Row="1" Grid.Column="1" x:Name="titlw" ></TextBox>
+        <TextBox Grid.Row="2" Grid.Column="1" x:Name="summa" ></TextBox>
+        <TextBox Grid.Row="3" Grid.Column="1" x:Name="discount" ></TextBox>
         <StackPanel Grid.Row="4" Grid.Column="1" >
-            <Button x:Name="dobavit">Добавить</Button>
+            <Button x:Name="dobavit" Click="dobavit_Click">Добавить</Button>
             <Button x:Name="close">выйти</Button>
         </StackPanel>
         

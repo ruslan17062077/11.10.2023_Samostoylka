@@ -23,5 +23,10 @@ namespace mvideo.Pages
         {
             InitializeComponent();
         }
+
+        private void dobavit_Click(object sender, RoutedEventArgs e)
+        {
+            App.dp dp = new App();
+        }
     }
 }

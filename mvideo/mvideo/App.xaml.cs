@@ -14,7 +14,6 @@ namespace mvideo
     /// </summary>
     public partial class App : Application
     {
-        public static HS db = new HS();
-        public static bool admins = false;
+       
     }
 }
