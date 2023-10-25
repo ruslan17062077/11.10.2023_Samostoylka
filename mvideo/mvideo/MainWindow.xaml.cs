@@ -1,4 +1,5 @@
-﻿using System;
+﻿using mvideo.Components;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -15,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace mvideo
 {
     /// <summary>
@@ -24,6 +26,7 @@ namespace mvideo
     {
         public MainWindow()
         {
+
             InitializeComponent();
             //var path = @"C:\Users\222108\Desktop\Задание магазин техники\";
             //foreach (var item in App.db.Product.ToArray())
@@ -33,8 +36,9 @@ namespace mvideo
             //    item.MainImage = imageByte;
             //}
             //App.db.SaveChanges();
-            frams.Navigate(new Pages.Catalog());
-            if(App.admins = false)
+            NavigationClass.mainWindow = this;
+            NavigationClass.NextPage(new PageCompanent(new Pages.Catalog(), " Список Товара"));
+            if (App.admins = false)
             { 
                 vhodadmin.Visibility = Visibility.Collapsed;
                 passwordadm.Visibility = Visibility.Collapsed;
@@ -59,7 +63,7 @@ namespace mvideo
                 passwordadm.Visibility= Visibility.Collapsed;
                 endadmin.Visibility= Visibility.Visible;
                 InitializeComponent();
-                frams.Navigate(new Pages.Catalog());
+                NavigationClass.NextPage(new PageCompanent(new Pages.Catalog(), " Список Admins"));
             }
 
         }
@@ -71,7 +75,7 @@ namespace mvideo
             passwordadm.Visibility = Visibility.Visible;
             endadmin.Visibility = Visibility.Collapsed;
             InitializeComponent();
-            frams.Navigate(new Pages.Catalog());
+            NavigationClass.NextPage(new PageCompanent(new Pages.Catalog(), " Список Услуг"));
         }
     }
 }

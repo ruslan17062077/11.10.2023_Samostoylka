@@ -15,7 +15,12 @@
             <RowDefinition Height="16*"/>
             <RowDefinition Height="201*"/>
         </Grid.RowDefinitions>
-        <TextBlock HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1" >M_video</TextBlock>
+        <StackPanel  HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+            <TextBlock>M_video</TextBlock>
+            <TextBlock>/</TextBlock>
+            <TextBlock x:Name="TitleTb"></TextBlock>
+        </StackPanel>
+        
         <Image Source="/Resours/Image_logo/m_video.png" ></Image>
         <Frame x:Name="frams" Grid.Column="1" Grid.Row="1"  NavigationUIVisibility="Hidden" ></Frame>
         <StackPanel Grid.Column="0" Grid.Row="1" VerticalAlignment="Bottom">
@@ -30,6 +35,7 @@
                 выход<LineBreak/> адимн
                 </TextBlock>
             </Button>
+            <Button x:Name="nazad" Background="Blue" > Назад</Button>
             <Button x:Name="close" Background="Blue" Click="close_Click" >Выход</Button>
         </StackPanel>
         

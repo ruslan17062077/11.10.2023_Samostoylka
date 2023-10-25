@@ -44,5 +44,20 @@ namespace mvideo.Components
                 
             }
         }
+
+        public double TotalCost
+        {
+            get
+            {
+                if(Discount != 0)
+                {
+                    return ((double)Cost - ((double)Cost * (double)Discount / 100));
+                }
+                else
+                {
+                    return (double)Cost;
+                }
+            }
+        }
     }
 }

@@ -94,6 +94,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Components\NavigationClass.cs" />
     <Compile Include="Components\PartiyClass\Product.cs" />
     <Compile Include="Components\Product.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -114,7 +115,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Pages\AddProds.xaml">
+    <Page Include="Pages\AddandReg.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -124,8 +125,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pages\AddProds.xaml.cs">
-      <DependentUpon>AddProds.xaml</DependentUpon>
+    <Compile Include="Pages\AddandReg.xaml.cs">
+      <DependentUpon>AddandReg.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Catalog.xaml.cs">
       <DependentUpon>Catalog.xaml</DependentUpon>
