@@ -70,9 +70,12 @@ namespace mvideo.Components
 
         private void Delite_Click(object sender, RoutedEventArgs e)
         {
+
             App.db.Product.Remove(product);
-            App.db.Feedback.Remove((Feedback)App.db.Feedback.Where(x => x.Id == product.Id));
             App.db.SaveChanges();
+            NavigationClass.companents.Clear();
+            NavigationClass.NextPage(new PageCompanent( new Pages.Catalog(), "Список Admin"));
+            
         }
     }
 }

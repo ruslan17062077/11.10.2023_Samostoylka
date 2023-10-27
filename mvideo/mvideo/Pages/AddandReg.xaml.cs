@@ -1,6 +1,9 @@
-﻿using mvideo.Components;
+﻿using Microsoft.Win32;
+using mvideo.Components;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,12 +38,23 @@ namespace mvideo.Pages
             {
                 App.db.Product.Add(prod);
             }
+            App.db.Product.AddOrUpdate(prod);
             App.db.SaveChanges();
+            NavigationClass.NextPage(new PageCompanent(new Pages.Catalog(), " Список Admins"));
 
         }
 
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
+            OpenFileDialog openFileDialog = new OpenFileDialog()
+            {
+                Filter = "(*.png,*.jpeg,*.jpg)| *.png| *.jpeg| *.jpg "
+            };
+            if (openFileDialog.ShowDialog().GetValueOrDefault())
+            {
+                prod.MainImage = File.ReadAllBytes(openFileDialog.FileName);
+                img.Source = new BitmapImage(new Uri(openFileDialog.FileName));
+            }
 
         }
     }

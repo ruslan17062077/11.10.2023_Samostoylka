@@ -35,7 +35,7 @@
                 выход<LineBreak/> адимн
                 </TextBlock>
             </Button>
-            <Button x:Name="nazad" Background="Blue" > Назад</Button>
+            <Button x:Name="nazad" Background="Blue" Click="nazad_Click" > Назад</Button>
             <Button x:Name="close" Background="Blue" Click="close_Click" >Выход</Button>
         </StackPanel>
         

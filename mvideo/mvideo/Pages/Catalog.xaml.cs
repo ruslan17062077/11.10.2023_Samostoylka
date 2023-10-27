@@ -42,7 +42,7 @@ namespace mvideo.Pages
             int servisCountStar = services.Count();
             if (sortcb.SelectedIndex != 0)
             {
-                if (sortcb.SelectedIndex == 2)
+                if (sortcb.SelectedIndex == 1)
                 {
                     services = services.OrderBy(x => x.TotalCost);
 

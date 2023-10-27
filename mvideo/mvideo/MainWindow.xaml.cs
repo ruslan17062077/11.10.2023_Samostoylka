@@ -77,5 +77,10 @@ namespace mvideo
             InitializeComponent();
             NavigationClass.NextPage(new PageCompanent(new Pages.Catalog(), " Список Услуг"));
         }
+
+        private void nazad_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationClass.BackPage();
+        }
     }
 }

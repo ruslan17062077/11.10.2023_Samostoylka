@@ -10,43 +10,44 @@
 
     <Grid Background="#FFECA8A8">
         <Grid.RowDefinitions>
-            <RowDefinition Height="29*"/>
-            <RowDefinition Height="388*"/>
-            <RowDefinition Height="33*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
         <ScrollViewer HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Center" Grid.Row="1">
-            <WrapPanel x:Name="catalWP" Grid.Row="1"> </WrapPanel>
+            <WrapPanel x:Name="catalWP" Grid.Row="1"></WrapPanel>
         </ScrollViewer>
         <StackPanel Grid.Row="2 " Orientation="Horizontal">
             <TextBlock x:Name="coltb" Width="100" ></TextBlock>
-            <Button  x:Name="addProd" Click="addProd_Click"  >Добавить</Button>
             
+
         </StackPanel>
         <Expander>
             <StackPanel Orientation="Horizontal" >
-            
-            <ComboBox x:Name="sortcb" SelectionChanged="sortcb_SelectionChanged" >
-                
-                <ComboBoxItem>По умолчанию</ComboBoxItem>
-                <ComboBoxItem>По возрастанию</ComboBoxItem>
-                <ComboBoxItem>По убыванию</ComboBoxItem>
-            </ComboBox>
-            <TextBlock> по скидке</TextBlock>
-            <ComboBox x:Name="diskountcb" SelectionChanged="diskountcb_SelectionChanged" >
-                <ComboBoxItem>все</ComboBoxItem>
-                <ComboBoxItem>то 0% - 5% </ComboBoxItem>
-                <ComboBoxItem>5% -15%</ComboBoxItem>
-                <ComboBoxItem>15% - 30%</ComboBoxItem>
-                <ComboBoxItem>30% - 70%</ComboBoxItem>
-                <ComboBoxItem>70% - 100%</ComboBoxItem>
-            </ComboBox>
-            <TextBlock>По названию и описанию</TextBlock>
-            <TextBox x:Name="SeartCBg" Width="200" TextChanged="SeartCBg_TextChanged">
-                
-            </TextBox>
-        </StackPanel>
+
+                <ComboBox x:Name="sortcb" SelectionChanged="sortcb_SelectionChanged" >
+
+                    <ComboBoxItem>По умолчанию</ComboBoxItem>
+                    <ComboBoxItem>По возрастанию</ComboBoxItem>
+                    <ComboBoxItem>По убыванию</ComboBoxItem>
+                </ComboBox>
+                <TextBlock> по скидке</TextBlock>
+                <ComboBox x:Name="diskountcb" SelectionChanged="diskountcb_SelectionChanged" >
+                    <ComboBoxItem>все</ComboBoxItem>
+                    <ComboBoxItem>то 0% - 5%</ComboBoxItem>
+                    <ComboBoxItem>5% -15%</ComboBoxItem>
+                    <ComboBoxItem>15% - 30%</ComboBoxItem>
+                    <ComboBoxItem>30% - 70%</ComboBoxItem>
+                    <ComboBoxItem>70% - 100%</ComboBoxItem>
+                </ComboBox>
+                <TextBlock>По названию и описанию</TextBlock>
+                <TextBox x:Name="SeartCBg" Width="200" TextChanged="SeartCBg_TextChanged">
+
+                </TextBox>
+                <Button  x:Name="addProd" Click="addProd_Click"  >Добавить</Button>
+            </StackPanel>
         </Expander>
-        
+
 
 
     </Grid>
