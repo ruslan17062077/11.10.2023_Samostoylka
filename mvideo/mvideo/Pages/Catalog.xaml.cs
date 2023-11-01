@@ -40,45 +40,7 @@ namespace mvideo.Pages
             var prod = App.db.Product.ToList();
             IEnumerable<Product> services = App.db.Product.ToList();
             int servisCountStar = services.Count();
-            if (sortcb.SelectedIndex != 0)
-            {
-                if (sortcb.SelectedIndex == 1)
-                {
-                    services = services.OrderBy(x => x.TotalCost);
 
-                }
-                else
-                    services = services.OrderByDescending(x => x.TotalCost);
-            }
-            if (diskountcb.SelectedIndex != 0)
-            {
-                if (diskountcb.SelectedIndex == 1)
-                {
-                    services = services.Where(x => x.Discount < 5 | x.Discount == null);
-                }
-                else if (diskountcb.SelectedIndex == 2)
-                {
-                    services = services.Where(x => (int)x.Discount > 5 & (int)x.Discount < 15);
-                }
-                else if (diskountcb.SelectedIndex == 3)
-                {
-                    services = services.Where(x => (int)x.Discount > 15 & (int)x.Discount < 30);
-                }
-                else if (diskountcb.SelectedIndex == 4)
-                {
-                    services = services.Where(x => (int)x.Discount > 30 & (int)x.Discount < 70);
-                }
-                else if (diskountcb.SelectedIndex == 5)
-                {
-                    services = services.Where(x => (int)x.Discount > 70 & (int)x.Discount < 100);
-                }
-            }
-            if (SeartCBg.Text != null)
-            {
-                services = services.Where(x => x.Title.ToLower().Contains(SeartCBg.Text.ToLower()) ||
-                x.Description.ToLower().Contains(SeartCBg.Text.ToLower())
-                );
-            }
 
             catalWP.Children.Clear();
             int sercountend = services.Count();
