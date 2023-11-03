@@ -34,15 +34,62 @@ namespace mvideo.Pages
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            if (prod.Id== 0)
-            {
-                App.db.Product.Add(prod);
-            }
-            App.db.Product.AddOrUpdate(prod);
-            App.db.SaveChanges();
-            NavigationClass.NextPage(new PageCompanent(new Pages.Catalog(), " Список Admins"));
 
+            StringBuilder error = new StringBuilder();
+
+
+
+            if (prod.Id == 0 && App.db.Product.Any(x => x.Title == prod.Title))
+            {
+                error.AppendLine("Такая услуга уже имеется");
+
+            }
+            else
+            {
+
+
+                App.db.Product.Add(prod);
+
+                NavigationClass.NextPage(new PageCompanent(new Pages.Catalog(), "Список админ"));
+            }
+            if (int.Parse(discountTb.Text) <= 0 | int.Parse(discountTb.Text) > 100)
+            {
+                error.AppendLine("Некоректные данные ");
+            }
+
+            if (error.Length > 0)
+            {
+                MessageBox.Show(error.ToString());
+            }
+            else
+            {
+                try
+                {
+                    App.db.SaveChanges();
+                    MessageBox.Show("save!");
+                    NavigationClass.companents.Clear();
+                    NavigationClass.NextPage(new PageCompanent(new Pages.Catalog(), "Список адимн"));
+                }
+                catch {
+
+                    
+                    MessageBox.Show("error!");
+                    NavigationClass.NextPage(new PageCompanent(new Pages.Catalog(), "Список адимн"));
+                }
+
+                }
         }
+            private void chenaTb_PreviewTextInput(object sender, TextCompositionEventArgs e)
+            {
+                if (!(char.IsDigit(e.Text[0])))
+                {
+                    e.Handled = true;
+
+                }
+
+    }
+
+
 
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
@@ -55,7 +102,7 @@ namespace mvideo.Pages
                 prod.MainImage = File.ReadAllBytes(openFileDialog.FileName);
                 img.Source = new BitmapImage(new Uri(openFileDialog.FileName));
             }
-
         }
     }
 }
+

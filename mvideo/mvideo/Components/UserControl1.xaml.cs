@@ -55,12 +55,19 @@ namespace mvideo.Components
         }
         private BitmapImage GetImageSours(byte[] byteImage)
         {
-            MemoryStream byteStream = new MemoryStream(byteImage);
-            BitmapImage bitmapImage = new BitmapImage();
-            bitmapImage.BeginInit();
-            bitmapImage.StreamSource = byteStream;
-            bitmapImage.EndInit();
-            return bitmapImage;
+            try
+            {
+                MemoryStream byteStream = new MemoryStream(byteImage);
+                BitmapImage bitmapImage = new BitmapImage();
+                bitmapImage.BeginInit();
+                bitmapImage.StreamSource = byteStream;
+                bitmapImage.EndInit();
+                return bitmapImage;
+            }
+            catch
+            {
+                return null;
+            }
         }
 
         private void Edit_Click(object sender, RoutedEventArgs e)

@@ -30,7 +30,7 @@
             <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Right">
 
                 <TextBlock >стоймость</TextBlock>
-                <TextBox  Text="{Binding Cost}" MinWidth="150" x:Name="chenaTb"></TextBox>
+                <TextBox  Text="{Binding Cost}" MinWidth="150" x:Name="chenaTb" TextInput="chenaTb_PreviewTextInput"></TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Right">
 
@@ -40,7 +40,7 @@
             <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Right">
 
                 <TextBlock >скидка</TextBlock>
-                <TextBox    Text="{Binding Discount}"  MinWidth="150" x:Name="discountTb"></TextBox>
+                <TextBox    Text="{Binding Discount}" TextInput="chenaTb_PreviewTextInput" MinWidth="150" x:Name="discountTb"></TextBox>
             </StackPanel>
 
 
