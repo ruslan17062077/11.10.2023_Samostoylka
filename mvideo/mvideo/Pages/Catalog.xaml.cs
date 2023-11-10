@@ -37,8 +37,8 @@ namespace mvideo.Pages
         }
         public void Refresh()
         {
-            var prod = App.db.Product.ToList();
-            IEnumerable<Product> services = App.db.Product.ToList();
+            var prod = App.db.Products.ToList();
+            IEnumerable<Product> services = App.db.Products.ToList();
             int servisCountStar = services.Count();
 
 

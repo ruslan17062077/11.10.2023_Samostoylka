@@ -4,8 +4,9 @@
     "\\mvideo",
     "\\mvideo\\mvideo",
     "\\mvideo\\mvideo\\Components",
+    "\\mvideo\\mvideo\\Components\\PartiyClass",
     "\\mvideo\\mvideo\\Pages"
   ],
-  "SelectedNode": "\\mvideo\\mvideo\\MainWindow.xaml.cs",
+  "SelectedNode": "\\mvideo\\mvideo\\Components\\PartiyClass\\Product.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -44,7 +44,7 @@ namespace mvideo.Pages
 
             try
             {
-                if (prod.Id == 0 && App.db.Product.Any(x => x.Title == prod.Title))
+                if (prod.Id == 0 && App.db.Products.Any(x => x.Title == prod.Title))
                 {
                     error.AppendLine("Такая услуга уже имеется");
 
@@ -61,7 +61,7 @@ namespace mvideo.Pages
                 {
                  
                     
-                        App.db.Product.AddOrUpdate(prod);
+                        App.db.Products.AddOrUpdate(prod);
                     
 
                         

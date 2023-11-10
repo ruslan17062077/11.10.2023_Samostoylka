@@ -12,12 +12,14 @@ namespace mvideo.Components
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagrams
+    public partial class production
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public int id { get; set; }
+        public int id_zakaz { get; set; }
+        public int id_prods { get; set; }
+        public Nullable<int> col { get; set; }
+    
+        public virtual Product Product { get; set; }
+        public virtual Zakaz Zakaz { get; set; }
     }
 }

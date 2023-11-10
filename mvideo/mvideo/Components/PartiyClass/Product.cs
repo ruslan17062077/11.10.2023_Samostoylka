@@ -25,24 +25,24 @@ namespace mvideo.Components
         {
             get
             {
-                if (Feedback.Count == 0)
+                if (Feedbacks.Count == 0)
                 {
                     
                     return (0, Visibility.Collapsed);
 
                 }
                 else
-                    return (Feedback.Count, Visibility.Visible);
+                    return (Feedbacks.Count, Visibility.Visible);
             }
         }
         public double AverageRating
         {
             get
             {
-                if (Feedback.Count == 0)
+                if (Feedbacks.Count == 0)
                     return 0;
                 else
-                    return Feedback.Average(x => x.Evaluation);
+                    return Feedbacks.Average(x => x.Evaluation);
                 
             }
         }

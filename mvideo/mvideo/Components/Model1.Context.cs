@@ -27,10 +27,12 @@ namespace mvideo.Components
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Feedback> Feedback { get; set; }
-        public virtual DbSet<Product> Product { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<Feedback> Feedbacks { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<production> productions { get; set; }
         public virtual DbSet<ProductPhoto> ProductPhotoes { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<Zakaz> Zakazs { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

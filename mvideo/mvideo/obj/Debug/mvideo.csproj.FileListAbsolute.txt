@@ -30,3 +30,5 @@ C:\Users\222108\Source\Repos\11.10.2023_Samostoylka\mvideo\mvideo\obj\Debug\Page
 C:\Users\222108\Source\Repos\11.10.2023_Samostoylka\mvideo\mvideo\obj\Debug\Pages\AddandReg.baml
 C:\Users\222108\Source\Repos\11.10.2023_Samostoylka\mvideo\mvideo\obj\Debug\Components\PhotoUserControl.g.cs
 C:\Users\222108\Source\Repos\11.10.2023_Samostoylka\mvideo\mvideo\obj\Debug\Components\PhotoUserControl.baml
+C:\Users\222108\Source\Repos\11.10.2023_Samostoylka\mvideo\mvideo\obj\Debug\Pages\Zacaz.g.cs
+C:\Users\222108\Source\Repos\11.10.2023_Samostoylka\mvideo\mvideo\obj\Debug\Pages\Zacaz.baml
