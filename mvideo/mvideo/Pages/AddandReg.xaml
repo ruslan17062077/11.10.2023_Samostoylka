@@ -10,14 +10,15 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="409*"/>
+            <RowDefinition Height="211*"/>
+            <RowDefinition Height="198*"/>
             <RowDefinition Height="41*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="51*"/>
             <ColumnDefinition Width="49*"/>
         </Grid.ColumnDefinitions>
-        <StackPanel HorizontalAlignment="Right"  VerticalAlignment="Top" Orientation="Vertical" Grid.Column="1" Margin="0,123,50,0" >
+        <StackPanel HorizontalAlignment="Right"  VerticalAlignment="Top" Orientation="Vertical" Grid.Column="1" Margin="0,123,50,0" Grid.RowSpan="2" Height="190" Width="251" >
             <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Right">
                 <TextBlock  >Индификатор</TextBlock>
                 <TextBox  MinWidth="150" Text="{Binding Id  }" x:Name="IdTb" IsEnabled="False"></TextBox>
@@ -40,7 +41,7 @@
             <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Right">
 
                 <TextBlock >скидка</TextBlock>
-                <TextBox    Text="{Binding Discount}" TextInput="chenaTb_PreviewTextInput" MinWidth="150" x:Name="discountTb"></TextBox>
+                <TextBox Text="{Binding Discount}" TextInput="chenaTb_PreviewTextInput" MinWidth="150" x:Name="discountTb"></TextBox>
             </StackPanel>
 
 
@@ -49,15 +50,22 @@
 
 
         </StackPanel>
-        <StackPanel Grid.Column="0" Margin="50,50,50,9" >
+
+        <StackPanel Grid.Column="0" Margin="1" Grid.Row="0" >
             <Border BorderBrush="DarkBlue" BorderThickness="1">
-                <Image  x:Name="img" Width="200" Height="190" Source="{Binding MainImage}" />
+                <Image  x:Name="img" Width="200" Height="150" Source="{Binding MainImage}" />
             </Border>
 
             <Button x:Name="Edit" Click="Edit_Click" >изменить фото</Button>
 
 
         </StackPanel>
-        <Button Grid.ColumnSpan="2" Grid.Row="1" x:Name="Save" Click="Save_Click" >сохранить</Button>
+        <StackPanel Grid.Row="1">
+            <ScrollViewer Margin="2" HorizontalAlignment="Center" HorizontalScrollBarVisibility="Disabled">
+                <WrapPanel  MinWidth="300" MinHeight="100" x:Name="PhotoWp"></WrapPanel>
+            </ScrollViewer>
+            <Button Click="AddImageBtn_Click" x:Name="AddImageBtn">Добавить изображение</Button>
+        </StackPanel>
+        <Button Grid.ColumnSpan="2" Grid.Row="2" x:Name="Save" Click="Save_Click" Margin="5,5,5,5" >сохранить</Button>
     </Grid>
 </Page>

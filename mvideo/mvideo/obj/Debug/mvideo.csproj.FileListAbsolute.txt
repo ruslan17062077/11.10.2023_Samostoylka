@@ -28,3 +28,5 @@ C:\Users\222108\source\repos\11.10.2023_Samostoylka\mvideo\mvideo\obj\Debug\Comp
 C:\Users\222108\source\repos\11.10.2023_Samostoylka\mvideo\mvideo\obj\Debug\Components\UserControl1.baml
 C:\Users\222108\Source\Repos\11.10.2023_Samostoylka\mvideo\mvideo\obj\Debug\Pages\AddandReg.g.cs
 C:\Users\222108\Source\Repos\11.10.2023_Samostoylka\mvideo\mvideo\obj\Debug\Pages\AddandReg.baml
+C:\Users\222108\Source\Repos\11.10.2023_Samostoylka\mvideo\mvideo\obj\Debug\Components\PhotoUserControl.g.cs
+C:\Users\222108\Source\Repos\11.10.2023_Samostoylka\mvideo\mvideo\obj\Debug\Components\PhotoUserControl.baml

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace mvideo.Components
 {
@@ -57,6 +59,16 @@ namespace mvideo.Components
                 {
                     return (double)Cost;
                 }
+            }
+        }
+        public Brush ColorBrush
+        {
+            get
+            {
+                if (Discount != 0)
+                    return new SolidColorBrush(Colors.LightGreen);
+                else
+                    return new SolidColorBrush(Colors.Black);
             }
         }
     }

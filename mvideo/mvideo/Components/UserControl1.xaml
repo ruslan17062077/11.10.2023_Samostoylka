@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:mvideo.Components"
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="400">
-    <Border BorderBrush="DarkBlue" BorderThickness="4" MaxWidth="400" MaxHeight="410"  Margin="5" MinHeight="390" MinWidth="400" Background="WhiteSmoke">
+    <Border    x:Name="MainBorder" BorderThickness="4" MaxWidth="400" MaxHeight="410"  Margin="5" MinHeight="390" MinWidth="400" Background="WhiteSmoke" >
         <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="225*"/>

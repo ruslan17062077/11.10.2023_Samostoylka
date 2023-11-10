@@ -46,10 +46,11 @@ namespace mvideo.Components
                 chenaTB.Text = $" {_prod.TotalCost:f2}";
                 chenaSkidTB.Visibility = _prod.CostVisibilitr;
                 othovTb.Visibility = _prod.CountFeedback.Item2;
-                
-                
+                MainBorder.BorderBrush = _prod.ColorBrush;
 
-            
+
+
+
 
 
         }
@@ -77,11 +78,19 @@ namespace mvideo.Components
 
         private void Delite_Click(object sender, RoutedEventArgs e)
         {
+            if (product.Feedback.Count > 0)
+            {
+                MessageBox.Show("У него есть отзовы нельзя удалить ");
+            }
+            else
+            {
 
-            App.db.Product.Remove(product);
-            App.db.SaveChanges();
-            NavigationClass.companents.Clear();
-            NavigationClass.NextPage(new PageCompanent( new Pages.Catalog(), "Список Admin"));
+
+                App.db.Product.Remove(product);
+                App.db.SaveChanges();
+                NavigationClass.companents.Clear();
+                NavigationClass.NextPage(new PageCompanent(new Pages.Catalog(), "Список Admin"));
+            }
             
         }
     }

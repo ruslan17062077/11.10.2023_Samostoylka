@@ -35,7 +35,7 @@ namespace mvideo.Pages
         {
             mvideo.Components.NavigationClass.NextPage(new PageCompanent(new AddandReg(new Product()), "Добавление товара"));
         }
-        private void Refresh()
+        public void Refresh()
         {
             var prod = App.db.Product.ToList();
             IEnumerable<Product> services = App.db.Product.ToList();

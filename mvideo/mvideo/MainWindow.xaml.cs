@@ -36,16 +36,17 @@ namespace mvideo
             //    item.MainImage = imageByte;
             //}
             //App.db.SaveChanges();
+            App.mainWindow = this;
             NavigationClass.mainWindow = this;
             NavigationClass.NextPage(new PageCompanent(new Pages.Catalog(), " Список Товара"));
-            if (App.admins == false)
+            if (App.admins != false)
             { 
                 vhodadmin.Visibility = Visibility.Collapsed;
                 passwordadm.Visibility = Visibility.Collapsed;
             }
             else
             {
-                endadmin.Visibility = Visibility.Collapsed;
+                endadmin.Visibility = Visibility.Hidden;
             }
         }
 

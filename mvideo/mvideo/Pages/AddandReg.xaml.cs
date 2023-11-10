@@ -28,8 +28,12 @@ namespace mvideo.Pages
         public AddandReg(Product _product)
         {
             prod = _product;
+            
             InitializeComponent();
             DataContext = prod;
+            App.prodPage = this;
+            
+
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)
@@ -38,25 +42,38 @@ namespace mvideo.Pages
             StringBuilder error = new StringBuilder();
 
 
-
-            if (prod.Id == 0 && App.db.Product.Any(x => x.Title == prod.Title))
+            try
             {
-                error.AppendLine("Такая услуга уже имеется");
+                if (prod.Id == 0 && App.db.Product.Any(x => x.Title == prod.Title))
+                {
+                    error.AppendLine("Такая услуга уже имеется");
 
+                }
+                else if (int.Parse(discountTb.Text) <= 0 | int.Parse(discountTb.Text) > 100)
+                {
+
+
+                    error.AppendLine("Некоректные данные ");
+
+
+                }
+                else
+                {
+                 
+                    
+                        App.db.Product.AddOrUpdate(prod);
+                    
+
+                        
+
+                    NavigationClass.NextPage(new PageCompanent(new Pages.Catalog(), "Список админ"));
+                }
             }
-            else
-            {
-
-
-                App.db.Product.Add(prod);
-
-                NavigationClass.NextPage(new PageCompanent(new Pages.Catalog(), "Список админ"));
-            }
-            if (int.Parse(discountTb.Text) <= 0 | int.Parse(discountTb.Text) > 100)
+            catch
             {
                 error.AppendLine("Некоректные данные ");
             }
-
+           
             if (error.Length > 0)
             {
                 MessageBox.Show(error.ToString());
@@ -65,10 +82,13 @@ namespace mvideo.Pages
             {
                 try
                 {
-                    App.db.SaveChanges();
-                    MessageBox.Show("save!");
-                    NavigationClass.companents.Clear();
-                    NavigationClass.NextPage(new PageCompanent(new Pages.Catalog(), "Список адимн"));
+                    
+                    
+                        App.db.SaveChanges();
+                        MessageBox.Show("save!");
+                        NavigationClass.companents.Clear();
+                        NavigationClass.NextPage(new PageCompanent(new Pages.Catalog(), "Список адимн"));
+
                 }
                 catch {
 
@@ -102,6 +122,37 @@ namespace mvideo.Pages
                 prod.MainImage = File.ReadAllBytes(openFileDialog.FileName);
                 img.Source = new BitmapImage(new Uri(openFileDialog.FileName));
             }
+        }
+        public void RefreshPhoto()
+        {
+            PhotoWp.Children.Clear();
+            foreach (var photo in App.db.ProductPhotoes)
+            {
+                PhotoWp.Children.Add(new PhotoUserControl(photo));
+            }
+            BitmapImage bitmapImage = new BitmapImage();
+            MemoryStream byteStream = new MemoryStream(prod.MainImage);
+            bitmapImage.BeginInit();
+            bitmapImage.StreamSource = byteStream;
+            bitmapImage.EndInit();
+            img.Source = bitmapImage;
+        }
+
+        private void AddImageBtn_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog()
+            {
+                Filter = "*.png|*.png|*.jpg|*.jpg|*.jpeg|*.jpeg"
+            };
+            if (openFile.ShowDialog().GetValueOrDefault())
+                App.db.ProductPhotoes.Add(new ProductPhoto
+                {
+                    id_prod = prod.Id,
+                    PhotoByte = File.ReadAllBytes(openFile.FileName)
+
+                });
+            RefreshPhoto();
+            App.db.SaveChanges();
         }
     }
 }
