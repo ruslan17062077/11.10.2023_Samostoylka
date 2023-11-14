@@ -93,5 +93,16 @@ namespace mvideo.Components
             }
             
         }
+
+        private void kupBtn_Click(object sender, RoutedEventArgs e)
+        {
+            App.db.Lists.Add(new List
+            {
+                Id_prod = product.Id,
+                col = 1
+            }) ;
+            App.db.SaveChanges();
+                
+        }
     }
 }

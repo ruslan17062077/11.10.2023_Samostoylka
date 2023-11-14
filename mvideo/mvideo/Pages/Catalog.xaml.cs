@@ -84,5 +84,10 @@ namespace mvideo.Pages
         {
             Refresh();
         }
+
+        private void zakaz_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationClass.NextPage(new PageCompanent(new Pages.Zacaz(), "Zakaz"));
+        }
     }
 }

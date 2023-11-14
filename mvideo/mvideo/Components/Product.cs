@@ -18,7 +18,7 @@ namespace mvideo.Components
         public Product()
         {
             this.Feedbacks = new HashSet<Feedback>();
-            this.productions = new HashSet<production>();
+            this.Lists = new HashSet<List>();
             this.ProductPhotoes = new HashSet<ProductPhoto>();
         }
     
@@ -33,7 +33,7 @@ namespace mvideo.Components
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Feedback> Feedbacks { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<production> productions { get; set; }
+        public virtual ICollection<List> Lists { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProductPhoto> ProductPhotoes { get; set; }
     }

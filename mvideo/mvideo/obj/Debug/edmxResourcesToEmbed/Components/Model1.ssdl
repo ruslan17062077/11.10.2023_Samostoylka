@@ -10,6 +10,14 @@
     <Property Name="Pros" Type="nvarchar" MaxLength="100" />
     <Property Name="Cons" Type="nvarchar" MaxLength="100" />
   </EntityType>
+  <EntityType Name="List">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_prod" Type="int" Nullable="false" />
+    <Property Name="col" Type="int" />
+  </EntityType>
   <EntityType Name="Product">
     <Key>
       <PropertyRef Name="Id" />
@@ -21,15 +29,6 @@
     <Property Name="Discount" Type="float" />
     <Property Name="MainImage" Type="varbinary(max)" />
     <Property Name="Image" Type="nvarchar(max)" />
-  </EntityType>
-  <EntityType Name="productions">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="id_zakaz" Type="int" Nullable="false" />
-    <Property Name="id_prods" Type="int" Nullable="false" />
-    <Property Name="col" Type="int" />
   </EntityType>
   <EntityType Name="ProductPhoto">
     <Key>
@@ -60,6 +59,14 @@
     <Property Name="Dom" Type="nvarchar" MaxLength="50" />
     <Property Name="phone" Type="nvarchar" MaxLength="12" />
   </EntityType>
+  <EntityType Name="ZakazList">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id_list" Type="int" />
+    <Property Name="id_zakaz" Type="int" />
+  </EntityType>
   <Association Name="FK_Feedback_Product">
     <End Role="Product" Type="Self.Product" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -74,27 +81,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_productions_Product">
+  <Association Name="FK_List_Product">
     <End Role="Product" Type="Self.Product" Multiplicity="1" />
-    <End Role="productions" Type="Self.productions" Multiplicity="*" />
+    <End Role="List" Type="Self.List" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Product">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="productions">
-        <PropertyRef Name="id_prods" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_productions_Zakaz">
-    <End Role="Zakaz" Type="Self.Zakaz" Multiplicity="1" />
-    <End Role="productions" Type="Self.productions" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Zakaz">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="productions">
-        <PropertyRef Name="id_zakaz" />
+      <Dependent Role="List">
+        <PropertyRef Name="Id_prod" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -109,6 +104,30 @@
       </Principal>
       <Dependent Role="ProductPhoto">
         <PropertyRef Name="id_prod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ZakazList_List">
+    <End Role="List" Type="Self.List" Multiplicity="0..1" />
+    <End Role="ZakazList" Type="Self.ZakazList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="List">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ZakazList">
+        <PropertyRef Name="id_list" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ZakazList_Zakaz">
+    <End Role="Zakaz" Type="Self.Zakaz" Multiplicity="0..1" />
+    <End Role="ZakazList" Type="Self.ZakazList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Zakaz">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ZakazList">
+        <PropertyRef Name="id_zakaz" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -145,26 +164,31 @@
   <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="Хранилище HSMContainer">
     <EntitySet Name="Feedback" EntityType="Self.Feedback" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="List" EntityType="Self.List" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="productions" EntityType="Self.productions" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ProductPhoto" EntityType="Self.ProductPhoto" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Zakaz" EntityType="Self.Zakaz" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ZakazList" EntityType="Self.ZakazList" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Feedback_Product" Association="Self.FK_Feedback_Product">
       <End Role="Product" EntitySet="Product" />
       <End Role="Feedback" EntitySet="Feedback" />
     </AssociationSet>
-    <AssociationSet Name="FK_productions_Product" Association="Self.FK_productions_Product">
+    <AssociationSet Name="FK_List_Product" Association="Self.FK_List_Product">
       <End Role="Product" EntitySet="Product" />
-      <End Role="productions" EntitySet="productions" />
-    </AssociationSet>
-    <AssociationSet Name="FK_productions_Zakaz" Association="Self.FK_productions_Zakaz">
-      <End Role="Zakaz" EntitySet="Zakaz" />
-      <End Role="productions" EntitySet="productions" />
+      <End Role="List" EntitySet="List" />
     </AssociationSet>
     <AssociationSet Name="FK_ProductPhoto_Product" Association="Self.FK_ProductPhoto_Product">
       <End Role="Product" EntitySet="Product" />
       <End Role="ProductPhoto" EntitySet="ProductPhoto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ZakazList_List" Association="Self.FK_ZakazList_List">
+      <End Role="List" EntitySet="List" />
+      <End Role="ZakazList" EntitySet="ZakazList" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ZakazList_Zakaz" Association="Self.FK_ZakazList_Zakaz">
+      <End Role="Zakaz" EntitySet="Zakaz" />
+      <End Role="ZakazList" EntitySet="ZakazList" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

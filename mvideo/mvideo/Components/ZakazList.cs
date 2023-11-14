@@ -12,22 +12,13 @@ namespace mvideo.Components
     using System;
     using System.Collections.Generic;
     
-    public partial class Zakaz
+    public partial class ZakazList
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Zakaz()
-        {
-            this.ZakazLists = new HashSet<ZakazList>();
-        }
-    
         public int id { get; set; }
-        public System.DateTime date { get; set; }
-        public string Gorod { get; set; }
-        public string Street { get; set; }
-        public string Dom { get; set; }
-        public string phone { get; set; }
+        public Nullable<int> id_list { get; set; }
+        public Nullable<int> id_zakaz { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ZakazList> ZakazLists { get; set; }
+        public virtual List List { get; set; }
+        public virtual Zakaz Zakaz { get; set; }
     }
 }

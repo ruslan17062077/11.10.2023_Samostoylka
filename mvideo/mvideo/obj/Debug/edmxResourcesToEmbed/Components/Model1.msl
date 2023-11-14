@@ -36,6 +36,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Lists">
+      <EntityTypeMapping TypeName="HSM.List">
+        <MappingFragment StoreEntitySet="List">
+          <ScalarProperty Name="col" ColumnName="col" />
+          <ScalarProperty Name="Id_prod" ColumnName="Id_prod" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Products">
       <EntityTypeMapping TypeName="HSM.Product">
         <MappingFragment StoreEntitySet="Product">
@@ -46,16 +55,6 @@
           <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="productions">
-      <EntityTypeMapping TypeName="HSM.production">
-        <MappingFragment StoreEntitySet="productions">
-          <ScalarProperty Name="col" ColumnName="col" />
-          <ScalarProperty Name="id_prods" ColumnName="id_prods" />
-          <ScalarProperty Name="id_zakaz" ColumnName="id_zakaz" />
-          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -87,6 +86,15 @@
           <ScalarProperty Name="Street" ColumnName="Street" />
           <ScalarProperty Name="Gorod" ColumnName="Gorod" />
           <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ZakazLists">
+      <EntityTypeMapping TypeName="HSM.ZakazList">
+        <MappingFragment StoreEntitySet="ZakazList">
+          <ScalarProperty Name="id_zakaz" ColumnName="id_zakaz" />
+          <ScalarProperty Name="id_list" ColumnName="id_list" />
           <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\222108\Source\Repos\11.10.2023_Samostoylka\mvideo\mvideo\obj\Release\
+C:\Users\222108\source\repos\11.10.2023_Samostoylka\mvideo\mvideo\obj\Release\
 mvideo
 none
 false
 TRACE
-C:\Users\222108\Source\Repos\11.10.2023_Samostoylka\mvideo\mvideo\App.xaml
-6-1807468810
+C:\Users\222108\source\repos\11.10.2023_Samostoylka\mvideo\mvideo\App.xaml
+7-655021439
 2-1407320939
-24-179337660
-18-99256243
-Components\PhotoUserControl.xaml;Components\UserControl1.xaml;MainWindow.xaml;Pages\AddandReg.xaml;Pages\Catalog.xaml;Pages\Zacaz.xaml;
+26-720497547
+20-1470855205
+Components\PhotoUserControl.xaml;Components\UserControl1.xaml;Components\ZacazUserControl.xaml;MainWindow.xaml;Pages\AddandReg.xaml;Pages\Catalog.xaml;Pages\Zacaz.xaml;
 
 True
 

@@ -24,7 +24,7 @@
             </StackPanel>
         
         <StackPanel Grid.Row="4" Orientation="Horizontal">
-            <Button Background="Red" BorderBrush="Black" Width="100" x:Name="kupBtn">🗑</Button>
+            <Button Background="Red" BorderBrush="Black" Width="100" x:Name="kupBtn" Click="kupBtn_Click">🗑</Button>
             <Button Background="White" Foreground="#FF7A7A7A" BorderBrush="White" x:Name="serBtn"  >❤</Button>
             <Button Background="White" Foreground="#FF7A7A7A" BorderBrush="White" x:Name="sravBtn" >📊</Button>
             <Button x:Name="Edit" Background="{x:Null}" Foreground="#FFFA0000" Click="Edit_Click" >✏</Button>

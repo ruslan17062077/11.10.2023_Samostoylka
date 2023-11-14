@@ -46,8 +46,9 @@
                 </TextBox>
                 <Button  x:Name="addProd" Click="addProd_Click"  >Добавить</Button>
             </StackPanel>
+            
         </Expander>
-
+        <Button x:Name="zakaz" Grid.Row="2" Click="zakaz_Click" >zakaz</Button>
 
 
     </Grid>

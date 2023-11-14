@@ -10,61 +10,20 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="427*"/>
-            <RowDefinition Height="23*"/>
+            <RowDefinition Height="29*"/>
+            <RowDefinition Height="391*"/>
+            <RowDefinition Height="30*"/>
         </Grid.RowDefinitions>
-        <ListView Grid.RowSpan="2">
-
-            <ListView ItemsSource="{Binding }" Grid.Column="0" Grid.RowSpan="2">
-                <ListView.View>
-                    <GridView>
-                        <GridViewColumn Width="200" Header="Товар" >
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding name_animal}"></TextBlock>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-
-
-
-                        </GridViewColumn >
-                        <GridViewColumn  Width="150" Header="количество" >
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding id_valier}"></TextBlock>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-                        <GridViewColumn  Width="150" Header="цена" >
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding id_valier}"></TextBlock>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-                        <GridViewColumn  Width="150" Header="Сумма" >
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding id_valier}"></TextBlock>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-                        <GridViewColumn  Width="125" Header="Действие" >
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Button  x:Name="DeleteBtn" ></Button>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-
-
-                    </GridView>
-
-                </ListView.View>
-            </ListView>
-        </ListView>
-        <StackPanel Grid.Row="1">
-            <Button>Оформить</Button>
+        
+            <TextBlock HorizontalAlignment="Center" Margin="5" > Список Заказов</TextBlock>
+        <StackPanel Grid.Row="1" >
+            <ScrollViewer>
+                <WrapPanel x:Name="WrapPanel" ></WrapPanel>
+            </ScrollViewer>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <TextBlock x:Name="colTb" ></TextBlock>
+            <Button Click="Button_Click">Оформить</Button>
         </StackPanel>
     </Grid>
 

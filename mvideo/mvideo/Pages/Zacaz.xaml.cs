@@ -1,5 +1,9 @@
-﻿using System;
+﻿using mvideo.Components;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
+using System.Diagnostics.Contracts;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +27,34 @@ namespace mvideo.Pages
         public Zacaz()
         {
             InitializeComponent();
+            Refresh();
+           
+        }
+        public void Refresh()
+        {
+            
+            
+            int servisCountStar = App.db.Lists.Count();
+            var prod = App.db.Lists.ToList();
+
+
+            WrapPanel.Children.Clear();
+            int sercountend = App.db.Lists.Count();
+            foreach (var prods in prod)
+            {
+                WrapPanel.Children.Add(new ZacazUserControl(prods));
+            }
+
+
+
+
+
+            colTb.Text = $"{sercountend} из {servisCountStar}";
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="mvideo.Components.ZacazUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:mvideo.Components"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="800">
+    <Border BorderBrush="Black" BorderThickness="3">
+        <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="17*"/>
+            <RowDefinition Height="38*"/>
+            <RowDefinition Height="49*"/>
+            <RowDefinition Height="61*"/>
+            <RowDefinition Height="35*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="43*"/>
+            <ColumnDefinition Width="157*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Image x:Name="img" Grid.RowSpan="5" Margin="10,10,10,10"></Image>
+        <TextBlock x:Name="name" Grid.Column="1" Grid.Row="1" Height="16" ></TextBlock>
+        <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal">
+            <TextBlock>цена:</TextBlock>
+            <TextBlock x:Name="chena" Width="200" ></TextBlock>
+            <TextBlock>количество:</TextBlock>
+            <TextBlock x:Name="coli" Width="200" ></TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal" >
+            <TextBlock>Итог:</TextBlock>
+            <TextBlock x:Name="itog" Width="200" ></TextBlock>
+        </StackPanel >
+        <StackPanel Grid.Column="1" Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right" >
+            <Button x:Name="Plus" Width="50" >+</Button>
+            <Button x:Name="Minus" Width="50" >-</Button>
+            <Button x:Name="delete" Width="50" >удалить</Button>
+        </StackPanel>
+
+    </Grid>
+    </Border>
+</UserControl>

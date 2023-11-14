@@ -5,16 +5,18 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="1b7541db50b44e7b99bd46e8ef9b633d" Name="Diagram1">
-        <EntityTypeShape EntityType="HSM.Feedback" Width="1.5" PointX="3" PointY="6.25" />
-        <EntityTypeShape EntityType="HSM.Product" Width="1.5" PointX="0.75" PointY="4.5" />
-        <EntityTypeShape EntityType="HSM.production" Width="1.5" PointX="3" PointY="3" />
-        <EntityTypeShape EntityType="HSM.ProductPhoto" Width="1.5" PointX="3" PointY="9.25" />
-        <EntityTypeShape EntityType="HSM.sysdiagram" Width="1.5" PointX="5.75" PointY="1.75" />
-        <EntityTypeShape EntityType="HSM.Zakaz" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HSM.Feedback" Width="1.5" PointX="3" PointY="6.5" />
+        <EntityTypeShape EntityType="HSM.List" Width="1.5" PointX="3" PointY="1.25" />
+        <EntityTypeShape EntityType="HSM.Product" Width="1.5" PointX="0.75" PointY="3.5" />
+        <EntityTypeShape EntityType="HSM.ProductPhoto" Width="1.5" PointX="3" PointY="3.875" />
+        <EntityTypeShape EntityType="HSM.sysdiagram" Width="1.5" PointX="5.75" PointY="4.75" />
+        <EntityTypeShape EntityType="HSM.Zakaz" Width="1.5" PointX="3" PointY="10" />
+        <EntityTypeShape EntityType="HSM.ZakazList" Width="1.5" PointX="5.25" PointY="1.25" />
         <AssociationConnector Association="HSM.FK_Feedback_Product" />
-        <AssociationConnector Association="HSM.FK_productions_Product" />
+        <AssociationConnector Association="HSM.FK_List_Product" />
+        <AssociationConnector Association="HSM.FK_ZakazList_List" />
         <AssociationConnector Association="HSM.FK_ProductPhoto_Product" />
-        <AssociationConnector Association="HSM.FK_productions_Zakaz" />
+        <AssociationConnector Association="HSM.FK_ZakazList_Zakaz" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
