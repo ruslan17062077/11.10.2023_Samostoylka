@@ -17,9 +17,9 @@ namespace mvideo.Components
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Product()
         {
-            this.Feedbacks = new HashSet<Feedback>();
-            this.Lists = new HashSet<List>();
-            this.ProductPhotoes = new HashSet<ProductPhoto>();
+            this.Feedback = new HashSet<Feedback>();
+            this.List = new HashSet<List>();
+            this.ProductPhoto = new HashSet<ProductPhoto>();
         }
     
         public int Id { get; set; }
@@ -31,10 +31,10 @@ namespace mvideo.Components
         public string Image { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Feedback> Feedbacks { get; set; }
+        public virtual ICollection<Feedback> Feedback { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<List> Lists { get; set; }
+        public virtual ICollection<List> List { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductPhoto> ProductPhotoes { get; set; }
+        public virtual ICollection<ProductPhoto> ProductPhoto { get; set; }
     }
 }

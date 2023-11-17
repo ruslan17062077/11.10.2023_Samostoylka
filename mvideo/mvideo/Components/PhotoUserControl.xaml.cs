@@ -36,7 +36,7 @@ namespace mvideo.Components
 
         private void DeleteBtn_Click(object sender, RoutedEventArgs e)
         {
-            App.db.ProductPhotoes.Remove(prodPhot);
+            App.db.ProductPhoto.Remove(prodPhot);
             App.db.SaveChanges();
             App.prodPage.RefreshPhoto();
         }

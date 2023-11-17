@@ -44,7 +44,7 @@ namespace mvideo.Pages
 
             try
             {
-                if (prod.Id == 0 && App.db.Products.Any(x => x.Title == prod.Title))
+                if (prod.Id == 0 && App.db.Product.Any(x => x.Title == prod.Title))
                 {
                     error.AppendLine("Такая услуга уже имеется");
 
@@ -61,7 +61,7 @@ namespace mvideo.Pages
                 {
                  
                     
-                        App.db.Products.AddOrUpdate(prod);
+                        App.db.Product.AddOrUpdate(prod);
                     
 
                         
@@ -126,7 +126,7 @@ namespace mvideo.Pages
         public void RefreshPhoto()
         {
             PhotoWp.Children.Clear();
-            foreach (var photo in App.db.ProductPhotoes)
+            foreach (var photo in App.db.ProductPhoto)
             {
                 PhotoWp.Children.Add(new PhotoUserControl(photo));
             }
@@ -145,7 +145,7 @@ namespace mvideo.Pages
                 Filter = "*.png|*.png|*.jpg|*.jpg|*.jpeg|*.jpeg"
             };
             if (openFile.ShowDialog().GetValueOrDefault())
-                App.db.ProductPhotoes.Add(new ProductPhoto
+                App.db.ProductPhoto.Add(new ProductPhoto
                 {
                     id_prod = prod.Id,
                     PhotoByte = File.ReadAllBytes(openFile.FileName)

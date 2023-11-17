@@ -17,17 +17,17 @@ namespace mvideo.Components
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Zakaz()
         {
-            this.ZakazLists = new HashSet<ZakazList>();
+            this.Order = new HashSet<Order>();
         }
     
-        public int id { get; set; }
-        public System.DateTime date { get; set; }
+        public int Id { get; set; }
+        public System.DateTime Date { get; set; }
         public string Gorod { get; set; }
         public string Street { get; set; }
         public string Dom { get; set; }
-        public string phone { get; set; }
+        public string Phone { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ZakazList> ZakazLists { get; set; }
+        public virtual ICollection<Order> Order { get; set; }
     }
 }

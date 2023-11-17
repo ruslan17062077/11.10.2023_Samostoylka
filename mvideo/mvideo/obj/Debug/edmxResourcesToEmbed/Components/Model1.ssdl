@@ -12,11 +12,19 @@
   </EntityType>
   <EntityType Name="List">
     <Key>
-      <PropertyRef Name="id" />
+      <PropertyRef Name="ID" />
     </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Id_prod" Type="int" Nullable="false" />
-    <Property Name="col" Type="int" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdProd" Type="int" Nullable="false" />
+    <Property Name="Count" Type="int" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="IdList" Type="int" />
+    <Property Name="IdZakaz" Type="int" />
   </EntityType>
   <EntityType Name="Product">
     <Key>
@@ -50,22 +58,14 @@
   </EntityType>
   <EntityType Name="Zakaz">
     <Key>
-      <PropertyRef Name="id" />
+      <PropertyRef Name="Id" />
     </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="date" Type="date" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
     <Property Name="Gorod" Type="nvarchar" MaxLength="50" />
     <Property Name="Street" Type="nvarchar" MaxLength="50" />
     <Property Name="Dom" Type="nvarchar" MaxLength="50" />
-    <Property Name="phone" Type="nvarchar" MaxLength="12" />
-  </EntityType>
-  <EntityType Name="ZakazList">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" Nullable="false" />
-    <Property Name="id_list" Type="int" />
-    <Property Name="id_zakaz" Type="int" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="12" />
   </EntityType>
   <Association Name="FK_Feedback_Product">
     <End Role="Product" Type="Self.Product" Multiplicity="1">
@@ -89,7 +89,7 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="List">
-        <PropertyRef Name="Id_prod" />
+        <PropertyRef Name="IdProd" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -109,25 +109,25 @@
   </Association>
   <Association Name="FK_ZakazList_List">
     <End Role="List" Type="Self.List" Multiplicity="0..1" />
-    <End Role="ZakazList" Type="Self.ZakazList" Multiplicity="*" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="List">
-        <PropertyRef Name="id" />
+        <PropertyRef Name="ID" />
       </Principal>
-      <Dependent Role="ZakazList">
-        <PropertyRef Name="id_list" />
+      <Dependent Role="Order">
+        <PropertyRef Name="IdList" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_ZakazList_Zakaz">
     <End Role="Zakaz" Type="Self.Zakaz" Multiplicity="0..1" />
-    <End Role="ZakazList" Type="Self.ZakazList" Multiplicity="*" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Zakaz">
-        <PropertyRef Name="id" />
+        <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="ZakazList">
-        <PropertyRef Name="id_zakaz" />
+      <Dependent Role="Order">
+        <PropertyRef Name="IdZakaz" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -165,11 +165,11 @@
   <EntityContainer Name="Хранилище HSMContainer">
     <EntitySet Name="Feedback" EntityType="Self.Feedback" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="List" EntityType="Self.List" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ProductPhoto" EntityType="Self.ProductPhoto" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Zakaz" EntityType="Self.Zakaz" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ZakazList" EntityType="Self.ZakazList" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Feedback_Product" Association="Self.FK_Feedback_Product">
       <End Role="Product" EntitySet="Product" />
       <End Role="Feedback" EntitySet="Feedback" />
@@ -184,11 +184,11 @@
     </AssociationSet>
     <AssociationSet Name="FK_ZakazList_List" Association="Self.FK_ZakazList_List">
       <End Role="List" EntitySet="List" />
-      <End Role="ZakazList" EntitySet="ZakazList" />
+      <End Role="Order" EntitySet="Order" />
     </AssociationSet>
     <AssociationSet Name="FK_ZakazList_Zakaz" Association="Self.FK_ZakazList_Zakaz">
       <End Role="Zakaz" EntitySet="Zakaz" />
-      <End Role="ZakazList" EntitySet="ZakazList" />
+      <End Role="Order" EntitySet="Order" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

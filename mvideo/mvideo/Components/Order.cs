@@ -12,11 +12,11 @@ namespace mvideo.Components
     using System;
     using System.Collections.Generic;
     
-    public partial class ZakazList
+    public partial class Order
     {
-        public int id { get; set; }
-        public Nullable<int> id_list { get; set; }
-        public Nullable<int> id_zakaz { get; set; }
+        public int Id { get; set; }
+        public Nullable<int> IdList { get; set; }
+        public Nullable<int> IdZakaz { get; set; }
     
         public virtual List List { get; set; }
         public virtual Zakaz Zakaz { get; set; }

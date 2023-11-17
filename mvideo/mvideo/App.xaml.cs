@@ -18,6 +18,7 @@ namespace mvideo
         public static bool admins = false;
         public static MainWindow mainWindow;
         public static Pages.AddandReg prodPage;
+        public static Pages.Zacaz zacazPage;
         
     }
 }

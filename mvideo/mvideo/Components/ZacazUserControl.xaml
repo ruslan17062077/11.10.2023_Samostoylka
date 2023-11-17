@@ -33,9 +33,9 @@
             <TextBlock x:Name="itog" Width="200" ></TextBlock>
         </StackPanel >
         <StackPanel Grid.Column="1" Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right" >
-            <Button x:Name="Plus" Width="50" >+</Button>
-            <Button x:Name="Minus" Width="50" >-</Button>
-            <Button x:Name="delete" Width="50" >удалить</Button>
+            <Button x:Name="Plus" Width="50" Click="Plus_Click" >+</Button>
+            <Button x:Name="Minus" Width="50" Click="Minus_Click" >-</Button>
+            <Button x:Name="delete" Width="50" Click="delete_Click" >удалить</Button>
         </StackPanel>
 
     </Grid>

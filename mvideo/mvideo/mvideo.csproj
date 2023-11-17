@@ -108,6 +108,9 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Components\NavigationClass.cs" />
+    <Compile Include="Components\Order.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Components\PartiyClass\Product.cs" />
     <Compile Include="Components\PartiyClass\productions.cs" />
     <Compile Include="Components\PhotoUserControl.xaml.cs">
@@ -125,7 +128,7 @@
     <Compile Include="Components\sp_helpdiagrams_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Components\sysdiagram.cs">
+    <Compile Include="Components\sysdiagrams.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Components\UserControl1.xaml.cs">
@@ -135,9 +138,6 @@
       <DependentUpon>ZacazUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Components\Zakaz.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Components\ZakazList.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
@@ -152,6 +152,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Oformlenie.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Zacaz.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -163,6 +167,9 @@
     </Compile>
     <Compile Include="Pages\Catalog.xaml.cs">
       <DependentUpon>Catalog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Oformlenie.xaml.cs">
+      <DependentUpon>Oformlenie.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Zacaz.xaml.cs">
       <DependentUpon>Zacaz.xaml</DependentUpon>
@@ -201,21 +208,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resours\Image_logo\m_video.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Components\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
       <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Components\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <Resource Include="Resours\Image_logo\m_video.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

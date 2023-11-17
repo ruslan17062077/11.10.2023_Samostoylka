@@ -78,7 +78,7 @@ namespace mvideo.Components
 
         private void Delite_Click(object sender, RoutedEventArgs e)
         {
-            if (product.Feedbacks.Count > 0)
+            if (product.Feedback.Count > 0)
             {
                 MessageBox.Show("У него есть отзовы нельзя удалить ");
             }
@@ -86,7 +86,7 @@ namespace mvideo.Components
             {
 
 
-                App.db.Products.Remove(product);
+                App.db.Product.Remove(product);
                 App.db.SaveChanges();
                 NavigationClass.companents.Clear();
                 NavigationClass.NextPage(new PageCompanent(new Pages.Catalog(), "Список Admin"));
@@ -96,10 +96,10 @@ namespace mvideo.Components
 
         private void kupBtn_Click(object sender, RoutedEventArgs e)
         {
-            App.db.Lists.Add(new List
+            App.db.List.Add(new List
             {
-                Id_prod = product.Id,
-                col = 1
+                IdProd = product.Id,
+                Count = 1
             }) ;
             App.db.SaveChanges();
                 

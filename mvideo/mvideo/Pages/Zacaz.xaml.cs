@@ -26,20 +26,21 @@ namespace mvideo.Pages
     {
         public Zacaz()
         {
+            App.zacazPage = this;
             InitializeComponent();
             Refresh();
-           
+
         }
         public void Refresh()
         {
-            
-            
-            int servisCountStar = App.db.Lists.Count();
-            var prod = App.db.Lists.ToList();
+
+
+            int servisCountStar = App.db.List.Count();
+            var prod = App.db.List.ToList();
 
 
             WrapPanel.Children.Clear();
-            int sercountend = App.db.Lists.Count();
+            int sercountend = App.db.List.Count();
             foreach (var prods in prod)
             {
                 WrapPanel.Children.Add(new ZacazUserControl(prods));
@@ -55,6 +56,14 @@ namespace mvideo.Pages
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+        public void RefreshZak()
+        {
+            WrapPanel.Children.Clear();
+            foreach (var prods in App.db.List.ToList())
+            {
+                WrapPanel.Children.Add(new ZacazUserControl(prods));
+            }
         }
     }
 }
