@@ -1,0 +1,16 @@
+C:\Users\222108\source\repos\11.10.2023_Samostoylka\isjjfg\isjjfg\bin\Debug\isjjfg.exe.config
+C:\Users\222108\source\repos\11.10.2023_Samostoylka\isjjfg\isjjfg\bin\Debug\isjjfg.exe
+C:\Users\222108\source\repos\11.10.2023_Samostoylka\isjjfg\isjjfg\bin\Debug\isjjfg.pdb
+C:\Users\222108\source\repos\11.10.2023_Samostoylka\isjjfg\isjjfg\obj\Debug\isjjfg.csproj.AssemblyReference.cache
+C:\Users\222108\source\repos\11.10.2023_Samostoylka\isjjfg\isjjfg\obj\Debug\isjjfg.csproj.SuggestedBindingRedirects.cache
+C:\Users\222108\source\repos\11.10.2023_Samostoylka\isjjfg\isjjfg\obj\Debug\MainWindow.g.cs
+C:\Users\222108\source\repos\11.10.2023_Samostoylka\isjjfg\isjjfg\obj\Debug\App.g.cs
+C:\Users\222108\source\repos\11.10.2023_Samostoylka\isjjfg\isjjfg\obj\Debug\isjjfg_MarkupCompile.cache
+C:\Users\222108\source\repos\11.10.2023_Samostoylka\isjjfg\isjjfg\obj\Debug\isjjfg_MarkupCompile.lref
+C:\Users\222108\source\repos\11.10.2023_Samostoylka\isjjfg\isjjfg\obj\Debug\MainWindow.baml
+C:\Users\222108\source\repos\11.10.2023_Samostoylka\isjjfg\isjjfg\obj\Debug\isjjfg.g.resources
+C:\Users\222108\source\repos\11.10.2023_Samostoylka\isjjfg\isjjfg\obj\Debug\isjjfg.Properties.Resources.resources
+C:\Users\222108\source\repos\11.10.2023_Samostoylka\isjjfg\isjjfg\obj\Debug\isjjfg.csproj.GenerateResource.cache
+C:\Users\222108\source\repos\11.10.2023_Samostoylka\isjjfg\isjjfg\obj\Debug\isjjfg.csproj.CoreCompileInputs.cache
+C:\Users\222108\source\repos\11.10.2023_Samostoylka\isjjfg\isjjfg\obj\Debug\isjjfg.exe
+C:\Users\222108\source\repos\11.10.2023_Samostoylka\isjjfg\isjjfg\obj\Debug\isjjfg.pdb

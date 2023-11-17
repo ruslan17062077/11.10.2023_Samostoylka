@@ -1,0 +1,8 @@
+C:\Users\222108\source\repos\11.10.2023_Samostoylka\INTERFacre\INTERFacre\bin\Debug\INTERFacre.exe.config
+C:\Users\222108\source\repos\11.10.2023_Samostoylka\INTERFacre\INTERFacre\bin\Debug\INTERFacre.exe
+C:\Users\222108\source\repos\11.10.2023_Samostoylka\INTERFacre\INTERFacre\bin\Debug\INTERFacre.pdb
+C:\Users\222108\source\repos\11.10.2023_Samostoylka\INTERFacre\INTERFacre\obj\Debug\INTERFacre.csproj.AssemblyReference.cache
+C:\Users\222108\source\repos\11.10.2023_Samostoylka\INTERFacre\INTERFacre\obj\Debug\INTERFacre.csproj.SuggestedBindingRedirects.cache
+C:\Users\222108\source\repos\11.10.2023_Samostoylka\INTERFacre\INTERFacre\obj\Debug\INTERFacre.csproj.CoreCompileInputs.cache
+C:\Users\222108\source\repos\11.10.2023_Samostoylka\INTERFacre\INTERFacre\obj\Debug\INTERFacre.exe
+C:\Users\222108\source\repos\11.10.2023_Samostoylka\INTERFacre\INTERFacre\obj\Debug\INTERFacre.pdb

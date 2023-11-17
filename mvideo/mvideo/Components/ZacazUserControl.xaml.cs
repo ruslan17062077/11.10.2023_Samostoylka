@@ -27,7 +27,7 @@ namespace mvideo.Components
         public ZacazUserControl(List _lists)
         {
             InitializeComponent();
-                img.Source = GetImageSours(lists.Product.MainImage);
+                
             
             
             lists = _lists;
