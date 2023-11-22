@@ -66,6 +66,7 @@
     <Property Name="Street" Type="nvarchar" MaxLength="50" />
     <Property Name="Dom" Type="nvarchar" MaxLength="50" />
     <Property Name="Phone" Type="nvarchar" MaxLength="12" />
+    <Property Name="Names" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <Association Name="FK_Feedback_Product">
     <End Role="Product" Type="Self.Product" Multiplicity="1">

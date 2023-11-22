@@ -9,8 +9,65 @@
       Title="Oformlenie">
 
     <Grid>
-        <StackPanel>
-            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="237*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="236*"/>
+            <ColumnDefinition Width="247*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="42*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="28*"/>
+            <RowDefinition Height="31*"/>
+            <RowDefinition Height="32*"/>
+            <RowDefinition Height="28*"/>
+            <RowDefinition Height="29*"/>
+            <RowDefinition Height="173*"/>
+            <RowDefinition Height="37*"/>
+        </Grid.RowDefinitions>
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Margin="78,0,0,0" Grid.ColumnSpan="2" Height="22" Width="169">
+            <TextBlock FontSize="20">Оформление товара</TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"  >
+            <TextBlock>Имя</TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"  >
+            <TextBlock>Телефон</TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"  >
+            <TextBlock>Город</TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Row="5" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"   >
+            <TextBlock>Улица</TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Row="6" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"   >
+            <TextBlock>Дом</TextBlock>
+        </StackPanel>
+
+
+        <StackPanel Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"    >
+            <TextBox MinWidth="150" x:Name="NameTB"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"   >
+            <TextBox MinWidth="150" x:Name="PhoneTB"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Row="4" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"   >
+            <TextBox MinWidth="150" x:Name="CityTB"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Row="5" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"   >
+            <TextBox MinWidth="150" x:Name="StreetTB"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Row="6" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"   >
+            <TextBox MinWidth="150" x:Name="HomeTB"></TextBox>
+        </StackPanel>
+
+
+        <StackPanel Grid.Row="8"   >
+            <Button x:Name="OtmenaBtn">Отмена</Button>
+        </StackPanel>
+        <StackPanel Grid.Row="8"  Grid.Column="4"  >
+            <Button x:Name="OfotmitBtn" Click="OfotmitBtn_Click" >Оформить</Button>
         </StackPanel>
     </Grid>
 </Page>

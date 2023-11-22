@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,24 @@ namespace mvideo.Pages
         public Oformlenie()
         {
             InitializeComponent();
+        }
+
+        private void OfotmitBtn_Click(object sender, RoutedEventArgs e)
+        {
+            App.db.Zakaz.Add(new Components.Zakaz
+            {
+                Date = DateTime.Now,
+                Gorod = CityTB.Text,
+                Street = StreetTB.Text,
+                Dom = HomeTB.Text,
+                Phone = PhoneTB.Text,
+                Names = NameTB.Text
+
+            });
+            App.db.SaveChanges();
+
+            
+
         }
     }
 }

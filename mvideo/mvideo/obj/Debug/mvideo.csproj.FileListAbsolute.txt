@@ -34,3 +34,5 @@ C:\Users\222108\Source\Repos\11.10.2023_Samostoylka\mvideo\mvideo\obj\Debug\Page
 C:\Users\222108\Source\Repos\11.10.2023_Samostoylka\mvideo\mvideo\obj\Debug\Pages\Zacaz.baml
 C:\Users\222108\source\repos\11.10.2023_Samostoylka\mvideo\mvideo\obj\Debug\Components\ZacazUserControl.g.cs
 C:\Users\222108\source\repos\11.10.2023_Samostoylka\mvideo\mvideo\obj\Debug\Components\ZacazUserControl.baml
+C:\Users\222108\source\repos\11.10.2023_Samostoylka\mvideo\mvideo\obj\Debug\Pages\Oformlenie.g.cs
+C:\Users\222108\source\repos\11.10.2023_Samostoylka\mvideo\mvideo\obj\Debug\Pages\Oformlenie.baml

@@ -76,6 +76,7 @@
     <Property Name="Dom" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Phone" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Order" Relationship="Self.FK_ZakazList_Zakaz" FromRole="Zakaz" ToRole="Order" />
+    <Property Name="Names" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <Association Name="FK_Feedback_Product">
     <End Role="Product" Type="Self.Product" Multiplicity="1">

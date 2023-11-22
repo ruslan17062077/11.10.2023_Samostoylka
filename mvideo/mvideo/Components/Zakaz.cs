@@ -26,6 +26,7 @@ namespace mvideo.Components
         public string Street { get; set; }
         public string Dom { get; set; }
         public string Phone { get; set; }
+        public string Names { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Order { get; set; }

@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\mvideo",
+    "\\mvideo\\mvideo",
+    "\\mvideo\\mvideo\\Components",
+    "\\mvideo\\mvideo\\Pages"
   ],
-  "SelectedNode": "\\C:\\Users\\222108\\Source\\Repos\\11.10.2023_Samostoylka",
+  "SelectedNode": "\\mvideo\\mvideo\\Components\\Model1.edmx",
   "PreviewInSolutionExplorer": false
 }

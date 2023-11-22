@@ -102,6 +102,10 @@ namespace mvideo.Components
                 Count = 1
             }) ;
             App.db.SaveChanges();
+            App.db.Order.Add(new Order
+            {
+                IdList =                            
+            });
                 
         }
     }
